@@ -22,10 +22,11 @@ export class Rrc {
   }
 
   connect(): void {
-    this.ddeClient.on('advise', async (service: string, topic: string, item: string, text: string) => {
+    this.ddeClient.on('advise', (service: string, topic: string, item: string, text: string) => {
       console.log({ service, topic, item, text });
     });
 
+    this.ddeClient.connect();
     // 订阅DDE数据
     this.ddeClient.startAdvise();
   }
