@@ -1,4 +1,4 @@
-import { DdeClient, DdeClientPoyloadServices } from 'ts-dde';
+import { DdeClient, DdeClientData, DdeClientPoyloadServices, DdeClientReqeustData } from 'ts-dde';
 
 export interface RrcOptions {
   symbols: string[];
@@ -21,9 +21,15 @@ export class Rrc {
     });
   }
 
+  /**
+   * 信息接收方法
+   * @param data
+   */
+  onMessage: (data: DdeClientData) => any = (data: DdeClientData) => undefined;
+
   connect(): void {
-    this.ddeClient.on('advise', (service: string, topic: string, item: string, text: string) => {
-      console.log({ service, topic, item, text });
+    this.ddeClient.on('advise', (data: DdeClientData) => {
+      this.onMessage(data);
     });
 
     this.ddeClient.connect();
@@ -35,5 +41,9 @@ export class Rrc {
     this.ddeClient.stopAdvise();
     this.ddeClient.disconnect();
     this.ddeClient.dispose();
+  }
+
+  request(items: string[]): DdeClientReqeustData[] {
+    return this.ddeClient.request(items);
   }
 }

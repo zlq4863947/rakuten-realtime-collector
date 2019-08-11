@@ -1,10 +1,24 @@
 {
   "name": "rakuten-realtime-collector",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "乐天证券-实时数据收集器",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bdd": "yarn jest --watch --onlyChanged",
+    "build:prod": "yarn build:preprocess && yarn tsc:app",
+    "build:preprocess": "rimraf dist",
+    "ci:build-check": "yarn run tsc:app --noEmit",
+    "format": "yarn format:ts && yarn format:md",
+    "format:md": "prettier --config .prettierrc --write \"./README*.md\" --parser markdown",
+    "format:ts": "yarn format:ts:import && prettier --config .prettierrc --write \"src/**/*.ts\"",
+    "format:ts:import": "import-sort --write \"src/**/*.ts\"",
+    "jest": "jest -c jest.config.js",
+    "lint": "yarn lint:ts",
+    "lint:ts": "tslint -p tsconfig.json -c tslint.json",
+    "prepublishOnly": "yarn build:prod",
+    "test": "yarn jest --runInBand",
+    "tsc:app": "tsc -p tsconfig.app.json",
+    "tsc:dev": "tsc -p tsconfig.dev.json"
   },
   "repository": {
     "type": "git",
@@ -41,6 +55,6 @@
     "yarn": "^1.17.3"
   },
   "dependencies": {
-    "ts-dde": "^1.0.1"
+    "ts-dde": "^1.0.3"
   }
 }
