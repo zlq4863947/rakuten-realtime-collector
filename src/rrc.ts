@@ -7,17 +7,17 @@ export interface RrcOptions {
 
 export class Rrc {
   private readonly ddeClient: DdeClient;
-  private readonly ddePoyload: DdeClientPoyloadServices;
+  private readonly ddePoyloadServices: DdeClientPoyloadServices;
 
   constructor(options: RrcOptions) {
-    this.ddePoyload = {
+    this.ddePoyloadServices = {
       RSS: {},
     };
     for (const symbol of options.symbols) {
-      this.ddePoyload.RSS[`${symbol}.T`] = options.items;
+      this.ddePoyloadServices.RSS[`${symbol}.T`] = options.items;
     }
     this.ddeClient = new DdeClient({
-      services: this.ddePoyload,
+      services: this.ddePoyloadServices,
     });
   }
 
