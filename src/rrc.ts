@@ -1,6 +1,8 @@
+import { InputParams, MarketSpeed } from 'rakuten-auto-login';
 import { DdeClient, DdeClientData, DdeClientPoyloadServices, DdeClientReqeustData } from 'ts-dde';
 
 export interface RrcOptions {
+  autoLoginInput: InputParams;
   symbols: string[];
   items: string[];
 }
@@ -8,6 +10,7 @@ export interface RrcOptions {
 export class Rrc {
   private readonly ddeClient: DdeClient;
   private readonly ddePoyloadServices: DdeClientPoyloadServices;
+  private readonly marketSpeed: MarketSpeed;
 
   constructor(options: RrcOptions) {
     this.ddePoyloadServices = {
@@ -19,21 +22,28 @@ export class Rrc {
     this.ddeClient = new DdeClient({
       services: this.ddePoyloadServices,
     });
+    this.marketSpeed = new MarketSpeed(options.autoLoginInput);
   }
 
   /**
-   * 信息接收方法
+   * receive message method
    * @param data
    */
   onMessage: (data: DdeClientData) => any = (data: DdeClientData) => undefined;
 
+  prepare() {
+    this.marketSpeed.login();
+    this.marketSpeed.startRSS();
+  }
+
   connect(): void {
+    this.prepare();
     this.ddeClient.on('advise', (data: DdeClientData) => {
       this.onMessage(data);
     });
 
     this.ddeClient.connect();
-    // 订阅DDE数据
+    // Subscribe to DDE data
     this.ddeClient.startAdvise();
   }
 

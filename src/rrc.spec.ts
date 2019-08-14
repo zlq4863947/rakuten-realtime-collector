@@ -6,6 +6,10 @@ describe('rakuten realtime collector', () => {
   let rrc: Rrc;
   beforeAll(() => {
     rrc = new Rrc({
+      autoLoginInput: {
+        user: 'test',
+        password: 'test',
+      },
       symbols: ['9501'],
       items: ['銘柄名称', '現在値'],
     });
