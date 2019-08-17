@@ -1,6 +1,6 @@
 {
   "name": "rakuten-realtime-collector",
-  "version": "0.3.0",
+  "version": "0.6.0",
   "description": "乐天证券-实时数据收集器",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -56,7 +56,8 @@
     "yarn": "^1.17.3"
   },
   "dependencies": {
-    "rakuten-auto-login": "^0.9.5",
+    "rakuten-auto-login": "^0.9.6",
+    "rxjs": "^6.5.2",
     "ts-dde": "^1.0.3"
   }
 }

@@ -3,6 +3,7 @@ import { DdeClient, DdeClientData, DdeClientPoyloadServices, DdeClientReqeustDat
 
 export interface RrcOptions {
   autoLoginInput: InputParams;
+  startApp: boolean;
   symbols: string[];
   items: string[];
 }
@@ -12,7 +13,7 @@ export class Rrc {
   private readonly ddePoyloadServices: DdeClientPoyloadServices;
   private readonly marketSpeed: MarketSpeed;
 
-  constructor(options: RrcOptions) {
+  constructor(private readonly options: RrcOptions) {
     this.ddePoyloadServices = {
       RSS: {},
     };
@@ -37,7 +38,9 @@ export class Rrc {
   }
 
   connect(): void {
-    this.prepare();
+    if (this.options.startApp) {
+      this.prepare();
+    }
     this.ddeClient.on('advise', (data: DdeClientData) => {
       this.onMessage(data);
     });

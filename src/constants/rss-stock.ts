@@ -137,7 +137,7 @@ export enum RssStock {
   /**
    * 例: 1068900
    */
-  MorningVolume = '出来高',
+  MorningVolume = '前場出来高',
   /**
    * 2214
    */
@@ -182,7 +182,7 @@ export enum RssStock {
    * S
    */
   SpecialBidFlag = '特別売気配フラグ',
-  SpecialAskFlag = '特別売気配フラグ',
+  SpecialAskFlag = '特別買気配フラグ',
   /**
    * 貸借
    */
@@ -288,7 +288,7 @@ export enum RssStock {
   BestAskQuantity10 = '最良買気配数量１０',
 
   SellVolume = '売成行数量',
-  BuyVolume = '売成行数量',
+  BuyVolume = '買成行数量',
   OverVolume = 'OVER気配数量',
   UnderVolume = 'UNDER気配数量',
   Unit = '単位株数',
@@ -297,10 +297,10 @@ export enum RssStock {
    * 40263 (表示形式-ﾕｰｻﾞｰ定義-yy-mm-dd)
    */
   DividendDate = '配当落日',
-  PFR = 'ＰＥＲ',
+  PER = 'ＰＥＲ',
   PBR = 'ＰＢＲ',
-  StarndardValue = '当日基準値',
-  NextDayStarndardValue = '翌日基準値',
+  StandardValue = '当日基準値',
+  NextDayStandardValue = '翌日基準値',
   /**
    * 2710 (～前日分まで)
    */

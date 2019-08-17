@@ -3363,10 +3363,10 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-rakuten-auto-login@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/rakuten-auto-login/-/rakuten-auto-login-0.9.5.tgz#d876b37da602ec89cefee3747cf448cf3024dd77"
-  integrity sha512-d/TqfDTS2ZOUOgBZBRFsyWELvM3KtFaCvO2p/W2Wo8ZVvYreztupaFzzagq32Pzo/LKzjOwaI1fRHPRFnlb0dA==
+rakuten-auto-login@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/rakuten-auto-login/-/rakuten-auto-login-0.9.6.tgz#71c22d713bb12be2d914ef1edf80780d501db045"
+  integrity sha512-8y1uUTQACZn+MBVDYUY0k/2NdYfHLz1UYLV0X6MrW6pYMKDFJRgof9BeRFjcOe86g4VCB8mCopDwEKXRlvfKLg==
   dependencies:
     edge-js "^12.3.1"
 
@@ -3573,7 +3573,7 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
-rxjs@^6.4.0:
+rxjs@^6.4.0, rxjs@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
   integrity sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
