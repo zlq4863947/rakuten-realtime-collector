@@ -1,6 +1,6 @@
 {
   "name": "rakuten-realtime-collector",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "description": "乐天证券-实时数据收集器",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

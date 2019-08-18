@@ -36,7 +36,7 @@ export class Rrc {
    * receive message method
    * @param data
    */
-  onMessage = (data: RssTopicData) => undefined;
+  onMessage = (data: RssTopicData) => {};
 
   prepare() {
     this.marketSpeed.login();
