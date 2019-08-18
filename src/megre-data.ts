@@ -19,7 +19,6 @@ export function mergeData(rssData: Observable<RssData>): Observable<RssTopicData
       {} as RssTopicData,
     ),
     bufferTime(1000),
-    // last(),
     map((topicDataList) => {
       if (topicDataList.length === 0) {
         return;

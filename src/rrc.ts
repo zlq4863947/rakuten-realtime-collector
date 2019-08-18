@@ -29,7 +29,7 @@ export class Rrc {
       services: this.ddePoyloadServices,
     });
     this.marketSpeed = new MarketSpeed(options.autoLoginInput);
-    mergeData(this.rssData$).subscribe(this.onMessage);
+    mergeData(this.rssData$).subscribe((data) => this.onMessage(data));
   }
 
   /**
