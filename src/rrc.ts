@@ -1,5 +1,9 @@
 import { InputParams, MarketSpeed } from 'rakuten-auto-login';
+import { Subject } from 'rxjs';
 import { DdeClient, DdeClientData, DdeClientPoyloadServices, DdeClientReqeustData } from 'ts-dde';
+
+import { mergeData } from './megre-data';
+import { RssData, RssTopicData } from './types';
 
 export interface RrcOptions {
   autoLoginInput: InputParams;
@@ -12,6 +16,7 @@ export class Rrc {
   private readonly ddeClient: DdeClient;
   private readonly ddePoyloadServices: DdeClientPoyloadServices;
   private readonly marketSpeed: MarketSpeed;
+  private readonly rssData$ = new Subject<RssData>();
 
   constructor(private readonly options: RrcOptions) {
     this.ddePoyloadServices = {
@@ -24,13 +29,14 @@ export class Rrc {
       services: this.ddePoyloadServices,
     });
     this.marketSpeed = new MarketSpeed(options.autoLoginInput);
+    mergeData(this.rssData$).subscribe(this.onMessage);
   }
 
   /**
    * receive message method
    * @param data
    */
-  onMessage: (data: DdeClientData) => any = (data: DdeClientData) => undefined;
+  onMessage: (data: RssTopicData) => any = (data: RssTopicData) => undefined;
 
   prepare() {
     this.marketSpeed.login();
@@ -42,7 +48,11 @@ export class Rrc {
       this.prepare();
     }
     this.ddeClient.on('advise', (data: DdeClientData) => {
-      this.onMessage(data);
+      this.rssData$.next({
+        topic: data.topic,
+        item: data.item,
+        text: data.text,
+      });
     });
 
     this.ddeClient.connect();
