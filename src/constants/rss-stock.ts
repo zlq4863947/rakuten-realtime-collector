@@ -158,31 +158,31 @@ export enum RssStock {
   /**
    * 2216 (=最良売気配1)
    */
-  BestBidPrice = '最良売気配値',
+  BestAskPrice = '最良売気配値',
   /**
    * 2206 (=最良買気配1)
    */
-  BestAskPrice = '最良買気配値',
+  BestBidPrice = '最良買気配値',
   /**
    * 1300
    */
-  BestBidQuantity = '最良売気配数量',
-  BestAskQuantity = '最良買気配数量',
+  BestAskQuantity = '最良売気配数量',
+  BestBidQuantity = '最良買気配数量',
   /**
    * 9:07:00
    */
-  BestBidTime = '最良売気配時刻',
-  BestAskTime = '最良買気配時刻',
+  BestAskTime = '最良売気配時刻',
+  BestBidTime = '最良買気配時刻',
   /**
    * 9:58:21 (秒単位まで表示)
    */
-  BestBidDetailTime = '最良売気配詳細時刻',
-  BestAskDetailTime = '最良買気配詳細時刻',
+  BestAskDetailTime = '最良売気配詳細時刻',
+  BestBidDetailTime = '最良買気配詳細時刻',
   /**
    * S
    */
-  SpecialBidFlag = '特別売気配フラグ',
-  SpecialAskFlag = '特別買気配フラグ',
+  SpecialAskFlag = '特別売気配フラグ',
+  SpecialBidFlag = '特別買気配フラグ',
   /**
    * 貸借
    */
@@ -198,19 +198,19 @@ export enum RssStock {
   /**
    * 0
    */
-  MarginBidRemaining = '信用売残',
-  MarginBidRemainingPrevWeekChange = '信用売残前週比',
-  MarginAskRemaining = '信用買残',
-  MarginAskRemainingPrevWeekChange = '信用買残前週比',
+  MarginAskRemaining = '信用売残',
+  MarginAskRemainingPrevWeekChange = '信用売残前週比',
+  MarginBidRemaining = '信用買残',
+  MarginBidRemainingPrevWeekChange = '信用買残前週比',
   MarginRatio = '信用倍率',
   /**
    * 日証金
    */
-  StockFinanceCode = '証金コード',
+  FinanceCode = '証金コード',
   /**
    * 40158 (表示形式-ﾕｰｻﾞｰ定義-yy-mm-dd)
    */
-  StockFinanceRemainingUpdateDate = '証金残更新日付',
+  FinanceRemainingUpdateDate = '証金残更新日付',
   /**
    * 121600
    */
@@ -245,47 +245,47 @@ export enum RssStock {
    */
   LendingRatio = '貸借倍率',
 
-  BestBidPrice1 = '最良売気配値１',
-  BestBidPrice2 = '最良売気配値２',
-  BestBidPrice3 = '最良売気配値３',
-  BestBidPrice4 = '最良売気配値４',
-  BestBidPrice5 = '最良売気配値５',
-  BestBidPrice6 = '最良売気配値６',
-  BestBidPrice7 = '最良売気配値７',
-  BestBidPrice8 = '最良売気配値８',
-  BestBidPrice9 = '最良売気配値９',
-  BestBidPrice10 = '最良売気配値１０',
-  BestAskPrice1 = '最良買気配値１',
-  BestAskPrice2 = '最良買気配値２',
-  BestAskPrice3 = '最良買気配値３',
-  BestAskPrice4 = '最良買気配値４',
-  BestAskPrice5 = '最良買気配値５',
-  BestAskPrice6 = '最良買気配値６',
-  BestAskPrice7 = '最良買気配値７',
-  BestAskPrice8 = '最良買気配値８',
-  BestAskPrice9 = '最良買気配値９',
-  BestAskPrice10 = '最良買気配値１０',
+  BestAskPrice1 = '最良売気配値１',
+  BestAskPrice2 = '最良売気配値２',
+  BestAskPrice3 = '最良売気配値３',
+  BestAskPrice4 = '最良売気配値４',
+  BestAskPrice5 = '最良売気配値５',
+  BestAskPrice6 = '最良売気配値６',
+  BestAskPrice7 = '最良売気配値７',
+  BestAskPrice8 = '最良売気配値８',
+  BestAskPrice9 = '最良売気配値９',
+  BestAskPrice10 = '最良売気配値１０',
+  BestBidPrice1 = '最良買気配値１',
+  BestBidPrice2 = '最良買気配値２',
+  BestBidPrice3 = '最良買気配値３',
+  BestBidPrice4 = '最良買気配値４',
+  BestBidPrice5 = '最良買気配値５',
+  BestBidPrice6 = '最良買気配値６',
+  BestBidPrice7 = '最良買気配値７',
+  BestBidPrice8 = '最良買気配値８',
+  BestBidPrice9 = '最良買気配値９',
+  BestBidPrice10 = '最良買気配値１０',
 
-  BestBidQuantity1 = '最良売気配数量１',
-  BestBidQuantity2 = '最良売気配数量２',
-  BestBidQuantity3 = '最良売気配数量３',
-  BestBidQuantity4 = '最良売気配数量４',
-  BestBidQuantity5 = '最良売気配数量５',
-  BestBidQuantity6 = '最良売気配数量６',
-  BestBidQuantity7 = '最良売気配数量７',
-  BestBidQuantity8 = '最良売気配数量８',
-  BestBidQuantity9 = '最良売気配数量９',
-  BestBidQuantity10 = '最良売気配数量１０',
-  BestAskQuantity1 = '最良買気配数量１',
-  BestAskQuantity2 = '最良買気配数量２',
-  BestAskQuantity3 = '最良買気配数量３',
-  BestAskQuantity4 = '最良買気配数量４',
-  BestAskQuantity5 = '最良買気配数量５',
-  BestAskQuantity6 = '最良買気配数量６',
-  BestAskQuantity7 = '最良買気配数量７',
-  BestAskQuantity8 = '最良買気配数量８',
-  BestAskQuantity9 = '最良買気配数量９',
-  BestAskQuantity10 = '最良買気配数量１０',
+  BestAskQuantity1 = '最良売気配数量１',
+  BestAskQuantity2 = '最良売気配数量２',
+  BestAskQuantity3 = '最良売気配数量３',
+  BestAskQuantity4 = '最良売気配数量４',
+  BestAskQuantity5 = '最良売気配数量５',
+  BestAskQuantity6 = '最良売気配数量６',
+  BestAskQuantity7 = '最良売気配数量７',
+  BestAskQuantity8 = '最良売気配数量８',
+  BestAskQuantity9 = '最良売気配数量９',
+  BestAskQuantity10 = '最良売気配数量１０',
+  BestBidQuantity1 = '最良買気配数量１',
+  BestBidQuantity2 = '最良買気配数量２',
+  BestBidQuantity3 = '最良買気配数量３',
+  BestBidQuantity4 = '最良買気配数量４',
+  BestBidQuantity5 = '最良買気配数量５',
+  BestBidQuantity6 = '最良買気配数量６',
+  BestBidQuantity7 = '最良買気配数量７',
+  BestBidQuantity8 = '最良買気配数量８',
+  BestBidQuantity9 = '最良買気配数量９',
+  BestBidQuantity10 = '最良買気配数量１０',
 
   SellVolume = '売成行数量',
   BuyVolume = '買成行数量',
@@ -325,20 +325,3 @@ export enum RssStock {
   AllTimeHighDate = '上場来高値日付',
   AllTimeLowDate = '上場来安値日付',
 }
-
-/**
- * 基本订阅对象
- */
-export const BasePlan = [
-  RssStock.Close,
-  RssStock.Open,
-  RssStock.High,
-  RssStock.Low,
-  RssStock.Volume,
-  RssStock.OverVolume,
-  RssStock.UnderVolume,
-  RssStock.BestBidPrice,
-  RssStock.BestBidQuantity,
-  RssStock.BestAskPrice,
-  RssStock.BestAskQuantity,
-];

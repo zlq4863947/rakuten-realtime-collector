@@ -25,7 +25,7 @@ describe('rakuten realtime collector', () => {
 
   it('get stock data', async () => {
     const receveMessages: DdeClientData[] = [];
-    rrc.onMessage = (data: DdeClientData) => receveMessages.push(data);
+    rrc.onMessage = (data: any) => receveMessages.push(data);
     await sleep(2000);
     expect(receveMessages.length).toEqual(2);
     /*expect(receveMessages).toEqual([
